@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+
+<template name="list">
+ <view class="colum">
+    <view class="left">
+  {{item.created_time}}
+    </view>
+    <view style="margin-top:30rpx">
+    {{item.nickName}}
+    </view>
+    <view class="r">
+    <image class="userinfo_img" src="{{item.headimgurl}}" background-size="cover"></image>
+    </view>
+    <view>{{item.province}}</view>
+</view>
+</template>
+<template is="list" wx:for="{{alluserinfo}}" data="{{item}}" ></template>
+ 
+
+
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>-->
+  <!--<view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>-->
+<template name="staffName">
+  <view >
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+
+<template bindtap="yusai" is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+<view style="height:200px"></view>
+</view>
